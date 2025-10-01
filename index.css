@@ -15,11 +15,33 @@ p {
   font-size: 20px;
 }
 a[href] {
-  color: saddlebrown;
+  color: saddlebrown !important;
 }
 div[name] {
   color: green;
 }
 .parent .child {
   color: yellow;
+}
+.parent2 .child {
+  color: blueviolet;
+}
+a:hover {
+  color: red;
+}
+/* :active {
+  color: green;
+} */
+.my-btn {
+  background-color: gray;
+  display: inline-block;
+  border: 5px solid #000;
+  padding: 3px 15px;
+  border-radius: 5px;
+  box-shadow: 5px 5px 5px #404040;
+}
+.my-btn:hover {
+  background-color: #000;
+  color: #fff;
+  box-shadow: 10px 10px 5px #404040;
 }
