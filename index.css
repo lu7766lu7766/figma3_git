@@ -1,8 +1,9 @@
 .text-lg {
   font-size: 40px;
 }
-.red {
-  color: green;
+.red,
+.red-text {
+  color: red;
 }
 p {
   color: red;
@@ -13,6 +14,9 @@ p {
 * {
   font-size: 20px;
 }
-[href] {
+a[href] {
   color: saddlebrown;
+}
+div[name] {
+  color: green;
 }
