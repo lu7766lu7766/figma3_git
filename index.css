@@ -20,3 +20,6 @@ a[href] {
 div[name] {
   color: green;
 }
+.parent .child {
+  color: yellow;
+}
