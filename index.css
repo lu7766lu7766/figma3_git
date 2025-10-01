@@ -1,0 +1,18 @@
+.text-lg {
+  font-size: 40px;
+}
+.red {
+  color: green;
+}
+p {
+  color: red;
+}
+#aside {
+  color: blue;
+}
+* {
+  font-size: 20px;
+}
+[href] {
+  color: saddlebrown;
+}
