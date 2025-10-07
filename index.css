@@ -57,6 +57,19 @@ a:hover {
   border-radius: 50%;
   background-color: red;
   z-index: 10;
+  transition: all 1s;
+  animation-name: move;
+}
+.circle.active {
+  left: 50%;
+}
+@keyframes move {
+  0% {
+    left: 0;
+  }
+  100% {
+    left: 50%;
+  }
 }
 .bg-image {
   width: 500px;
@@ -71,6 +84,7 @@ a:hover {
   align-items: center; */
   position: relative;
   overflow-y: auto;
+  cursor: pointer;
 }
 .center {
   position: absolute;
