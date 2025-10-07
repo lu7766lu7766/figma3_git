@@ -112,3 +112,31 @@ a:hover {
 body {
   margin: 0;
 }
+
+.shop-area {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 10px;
+}
+.item {
+  width: 30%;
+  height: 300px;
+  border: 1px solid #000;
+  padding: 10px;
+}
+.item .img {
+  width: 100%;
+  height: 80%;
+  background-color: #39a403;
+}
+.item .title {
+  font-weight: bold;
+  font-size: 20px;
+}
+
+@media screen and (max-width: 768px) {
+  .item {
+    width: 100%;
+  }
+}
