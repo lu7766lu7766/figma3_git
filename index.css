@@ -77,7 +77,14 @@ a:hover {
 }
 .rainbow {
   /* background: linear-gradient(to right, red, orange, yellow, green, blue, purple); */
-  background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQn8v1UnGtvi4ZBbbHqXkOWz-Yg-sAeWC_LrQ&s");
-  background-size: 100% 100%;
+  /* background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQn8v1UnGtvi4ZBbbHqXkOWz-Yg-sAeWC_LrQ&s"); */
+  /* background-size: 100% 100%; */
   text-align: center;
+  padding: 20px;
+  margin: 20px 0;
+  font-weight: 900;
+  border: 1px dashed #000;
+}
+body {
+  margin: 0;
 }
