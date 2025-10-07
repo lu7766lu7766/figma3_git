@@ -48,3 +48,36 @@ a:hover {
 .text-shadow {
   text-shadow: 5px 5px 3px #404040;
 }
+.circle {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background-color: red;
+}
+.bg-image {
+  width: 500px;
+  height: 500px;
+  /* background-image: url("./image.png");
+  background-size: contain;
+  background-repeat: no-repeat; */
+  background: url("./image.png") no-repeat center / contain;
+  text-align: center;
+  /* display: flex;
+  justify-content: center;
+  align-items: center; */
+  position: relative;
+}
+.center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  /* line-height: 500px; */
+  /* font-size: 300px; */
+}
+.rainbow {
+  /* background: linear-gradient(to right, red, orange, yellow, green, blue, purple); */
+  background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQn8v1UnGtvi4ZBbbHqXkOWz-Yg-sAeWC_LrQ&s");
+  background-size: 100% 100%;
+  text-align: center;
+}
