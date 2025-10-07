@@ -70,6 +70,7 @@ a:hover {
   justify-content: center;
   align-items: center; */
   position: relative;
+  overflow-y: auto;
 }
 .center {
   position: absolute;
@@ -91,7 +92,8 @@ a:hover {
   opacity: 0.3;
   position: relative;
   z-index: 50;
-  transform: scale(1.2) rotate(45deg) translateX(200px) translateY(-200px);
+  /* transform: scale(1.2) rotate(45deg) translateX(200px) translateY(-200px); */
+  font-family: "Zen Dots", "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 }
 body {
   margin: 0;
