@@ -49,10 +49,14 @@ a:hover {
   text-shadow: 5px 5px 3px #404040;
 }
 .circle {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 200px;
   height: 200px;
   border-radius: 50%;
   background-color: red;
+  z-index: 10;
 }
 .bg-image {
   width: 500px;
@@ -84,6 +88,9 @@ a:hover {
   margin: 20px 0;
   font-weight: 900;
   border: 1px dashed #000;
+  opacity: 0.3;
+  position: relative;
+  z-index: 50;
 }
 body {
   margin: 0;
