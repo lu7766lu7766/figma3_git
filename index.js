@@ -28,12 +28,12 @@ undefined
 // /
 // %
 // **
-console.log(2 + 3) // 5
-console.log(2 - 3) // -1
-console.log(2 * 3) // 6
-console.log(2 / 3) // 0.6
-console.log(2 % 3) // 2
-console.log(2 ** 3) // 8
+// console.log(2 + 3) // 5
+// console.log(2 - 3) // -1
+// console.log(2 * 3) // 6
+// console.log(2 / 3) // 0.6
+// console.log(2 % 3) // 2
+// console.log(2 ** 3) // 8
 
 // let a = 10
 // if (a > 10) {
@@ -50,3 +50,9 @@ console.log(2 ** 3) // 8
 // } else {
 //   console.log("該年份平年")
 // }
+
+for (let i = 0; i < 10; i++) {
+  console.log(i)
+}
+
+// 運用for迴圈加總1~100
