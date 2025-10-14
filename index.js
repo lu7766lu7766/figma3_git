@@ -109,13 +109,21 @@ undefined
 // sayMyName("小張")
 
 // 寫一個方法，有兩（三）個參數，會回傳最大的值
-function big(a, b, c) {
-  if (a > b && a > c) {
-    return a
-  } else if (b > a && b > c) {
-    return b
-  } else {
-    return c
-  }
-}
-console.log(big(4, 9, 7))
+// function big(a, b, c) {
+//   if (a > b && a > c) {
+//     return a
+//   } else if (b > a && b > c) {
+//     return b
+//   } else {
+//     return c
+//   }
+// }
+// console.log(big(4, 9, 7))
+
+// 寫一個方法，三個參數代表三個邊長，請判斷三個邊長是否可以成為三角形，回傳判斷結果
+
+// 寫一個方法，把剛剛相加成法放進去，乘數與被乘數改用參數取代
+
+// 寫一個判斷成績的方法，95以上回傳A+，90以上回傳A，80以上回傳B，70以上回傳C，60以上回傳D，60以下回傳E
+
+// 寫一個方法可以印出99乘法表，兩個參數，例如：給9, 9 就會印出 1 * 1 = 1  1 * 2 = 2.....9 * 9 = 81
