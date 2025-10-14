@@ -79,10 +79,20 @@ undefined
 // }
 
 // 使用for 跟加法，算出兩數相乘的結果，最後印出來
-let mul1 = 9
-let mul2 = 8
-let result = 0
-for (let i = 1; i <= mul2; i++) {
-  result = result + mul1
+// let mul1 = 9
+// let mul2 = 8
+// let result = 0
+// for (let i = 1; i <= mul2; i++) {
+//   result = result + mul1
+// }
+// console.log(result)
+
+// function add() {}
+// let add1 = function () {}
+// let add2 = () => {}
+function add(a, b) {
+  // return a + b
+  // a + b
 }
-console.log(result)
+let res = add(1, 2)
+console.log(res)
