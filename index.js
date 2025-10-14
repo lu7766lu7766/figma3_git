@@ -34,3 +34,19 @@ console.log(2 * 3) // 6
 console.log(2 / 3) // 0.6
 console.log(2 % 3) // 2
 console.log(2 ** 3) // 8
+
+// let a = 10
+// if (a > 10) {
+//   console.log("a大於10")
+// } else if (a < 10) {
+//   console.log("a小於10")
+// } else {
+//   console.log("a不大於10也不小於10")
+// }
+// // 該年份為400的倍數，或者為4的倍數，且不可以是100的倍數
+// let year = 2004
+// if (year % 400 == 0 || (year % 4 == 0 && year % 100 != 0)) {
+//   console.log("該年份為閏年")
+// } else {
+//   console.log("該年份平年")
+// }
