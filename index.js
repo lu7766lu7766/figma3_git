@@ -6,17 +6,31 @@ false
 null
 undefined
 
-let a = 10
-let b = 20
-let c = a
-a = b
-b = c
-console.log(a, b)
+// let a = 10
+// let b = 20
+// let c = a
+// a = b
+// b = c
+// console.log(a, b)
 
-// 邏輯運算子
-a > b // false
-a < b // true
-a == b // false
-a != b // true
-a < b && a != b // true
-a < b || a == b // true
+// // 邏輯運算子
+// a > b // false
+// a < b // true
+// a == b // false
+// a != b // true
+// a < b && a != b // true
+// a < b || a == b // true
+
+// 算數運算子
+// +
+// -
+// *
+// /
+// %
+// **
+console.log(2 + 3) // 5
+console.log(2 - 3) // -1
+console.log(2 * 3) // 6
+console.log(2 / 3) // 0.6
+console.log(2 % 3) // 2
+console.log(2 ** 3) // 8
