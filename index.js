@@ -101,9 +101,21 @@ undefined
 // console.log("hello " + 2 + " world")
 // `${表達式}`
 // console.log(`hello ${2} world`)
-function sayMyName(name) {
-  console.log(`my name is ${name}`)
+// function sayMyName(name) {
+//   console.log(`my name is ${name}`)
+// }
+// sayMyName("小明")
+// sayMyName("小美")
+// sayMyName("小張")
+
+// 寫一個方法，有兩（三）個參數，會回傳最大的值
+function big(a, b, c) {
+  if (a > b && a > c) {
+    return a
+  } else if (b > a && b > c) {
+    return b
+  } else {
+    return c
+  }
 }
-sayMyName("小明")
-sayMyName("小美")
-sayMyName("小張")
+console.log(big(4, 9, 7))
