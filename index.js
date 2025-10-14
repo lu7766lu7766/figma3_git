@@ -56,13 +56,24 @@ undefined
 // }
 
 // 運用for迴圈加總1~100
-let sum = 0
+// let sum = 0
+// for (let i = 1; i <= 100; i++) {
+//   // i = i + 1
+//   // i += 1
+//   // i++
+//   // sum += i
+//   sum = sum + i
+//   // console.log(i)
+// }
+
+// console.log(sum)
+
+// 印出1~100同時是4的倍數的值
 for (let i = 1; i <= 100; i++) {
-  // i = i + 1
-  // i += 1
-  // i++
-  // sum += i
-  sum = sum + i
-  // console.log(i)
+  if (i % 4 == 0) {
+    console.log(i)
+  }
 }
-console.log(sum)
+for (let i = 4; i <= 100; i += 4) {
+  console.log(i)
+}
