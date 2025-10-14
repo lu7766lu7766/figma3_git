@@ -51,8 +51,18 @@ undefined
 //   console.log("該年份平年")
 // }
 
-for (let i = 0; i < 10; i++) {
-  console.log(i)
-}
+// for (let i = 0; i < 10; i++) {
+//   console.log(i)
+// }
 
 // 運用for迴圈加總1~100
+let sum = 0
+for (let i = 1; i <= 100; i++) {
+  // i = i + 1
+  // i += 1
+  // i++
+  // sum += i
+  sum = sum + i
+  // console.log(i)
+}
+console.log(sum)
