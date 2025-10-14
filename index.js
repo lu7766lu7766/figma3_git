@@ -69,11 +69,20 @@ undefined
 // console.log(sum)
 
 // 印出1~100同時是4的倍數的值
-for (let i = 1; i <= 100; i++) {
-  if (i % 4 == 0) {
-    console.log(i)
-  }
+// for (let i = 1; i <= 100; i++) {
+//   if (i % 4 == 0) {
+//     console.log(i)
+//   }
+// }
+// for (let i = 4; i <= 100; i += 4) {
+//   console.log(i)
+// }
+
+// 使用for 跟加法，算出兩數相乘的結果，最後印出來
+let mul1 = 9
+let mul2 = 8
+let result = 0
+for (let i = 1; i <= mul2; i++) {
+  result = result + mul1
 }
-for (let i = 4; i <= 100; i += 4) {
-  console.log(i)
-}
+console.log(result)
