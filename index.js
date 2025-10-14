@@ -90,9 +90,20 @@ undefined
 // function add() {}
 // let add1 = function () {}
 // let add2 = () => {}
-function add(a, b) {
-  // return a + b
-  // a + b
+// function add(a, b) {
+//   // return a + b
+//   // a + b
+// }
+// let res = add(1, 2)
+// console.log(res)
+
+// sayMyName 參數 name // 印出 my name is {name}
+// console.log("hello " + 2 + " world")
+// `${表達式}`
+// console.log(`hello ${2} world`)
+function sayMyName(name) {
+  console.log(`my name is ${name}`)
 }
-let res = add(1, 2)
-console.log(res)
+sayMyName("小明")
+sayMyName("小美")
+sayMyName("小張")
