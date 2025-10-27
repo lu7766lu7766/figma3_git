@@ -85,6 +85,11 @@ undefined
 // for (let i = 1; i <= mul2; i++) {
 //   result = result + mul1
 // }
+// function mul(mul1, mul2) {
+
+// }
+// console.log(mul(3, 4))
+// console.log(mul(8, 7))
 // console.log(result)
 
 // function add() {}
@@ -121,9 +126,55 @@ undefined
 // console.log(big(4, 9, 7))
 
 // 寫一個方法，三個參數代表三個邊長，請判斷三個邊長是否可以成為三角形，回傳判斷結果
+function isTriangle(a, b, c) {
+  if (a + b > c && a + c > b && b + c > a) {
+    return true
+  } else {
+    return false
+  }
+}
+console.log(isTriangle(1, 2, 3))
+console.log(isTriangle(1, 2, 4))
+console.log(isTriangle(2, 2, 3))
 
 // 寫一個方法，把剛剛相加成法放進去，乘數與被乘數改用參數取代
-
+function mul(mul1, mul2) {
+  let result = 0
+  for (let i = 1; i <= mul2; i++) {
+    result = result + mul1
+  }
+  return result
+}
+console.log(mul(3, 4)) // 12
 // 寫一個判斷成績的方法，95以上回傳A+，90以上回傳A，80以上回傳B，70以上回傳C，60以上回傳D，60以下回傳E
-
+function scoreFn(score) {
+  if (score >= 95) {
+    return "A+"
+  } else if (score >= 90) {
+    return "A"
+  } else if (score >= 80) {
+    return "B"
+  } else if (score >= 70) {
+    return "C"
+  } else if (score >= 60) {
+    return "D"
+  } else {
+    return "E"
+  }
+}
 // 寫一個方法可以印出99乘法表，兩個參數，例如：給9, 9 就會印出 1 * 1 = 1  1 * 2 = 2.....9 * 9 = 81
+let result = ""
+for (let x = 1; x <= 9; x++) {
+  for (let y = 1; y <= 9; y++) {
+    // console.log(`${x} * ${y} = ${x * y}`)
+    result += `${x}*${y}=${x * y} `
+  }
+  result += "\n"
+}
+// ;("\n")
+// console.log("1*1=1 1*2=2\n2*1=2 2*2=4")
+console.log(result)
+
+// 使用跳脫字元，最後一次輸出
+
+// css 單位
