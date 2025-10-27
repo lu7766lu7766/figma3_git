@@ -345,11 +345,37 @@ const students = [
   },
 ]
 // console.log(students[0].last_name + " " + students[0].first_name)
+
+// forEach
+function showAllName(student) {
+  console.log(student.last_name + " " + student.first_name)
+}
 for (let i = 0; i < students.length; i++) {
-  console.log(students[i].last_name + " " + students[i].first_name)
+  let student = students[i]
+  showAllName(student)
+  // console.log(students[i].last_name + " " + students[i].first_name)
 }
 students.forEach(function (student) {
   console.log(student.last_name + " " + student.first_name)
 })
+
+// filter
+let result = []
+for (let i = 0; i < students.length; i++) {
+  let student = students[i]
+  if (student.gender == "male") {
+    result.push(student)
+  }
+}
+console.log(result)
+
+let result2 = students.filter(function (item) {
+  return item.gender == "male"
+})
+console.log(result2)
+
+// map
+
+// reduce
 
 // css 單位
