@@ -404,5 +404,10 @@ let result2 = students
 console.log(result2)
 
 // reduce
+console.log(
+  [1, 2, 3, 4, 5, 6, 7, 8, 9, 10].reduce(function (res, item) {
+    return res + item
+  }, 0)
+) // 0+1+2+3.....+10 = 55
 
 // css 單位
