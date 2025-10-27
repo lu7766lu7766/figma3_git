@@ -177,4 +177,32 @@ console.log(result)
 
 // 使用跳脫字元，最後一次輸出
 
+class Person {
+  constructor(name, age) {
+    this.name = name
+    this.age = age
+  }
+  sayMyName() {
+    console.log(`my name is ${this.name}`)
+  }
+}
+class Engereer extends Person {
+  sayMyName() {
+    console.log(`yo~ my name is ${this.name}`)
+  }
+  coding() {
+    console.log("coding...")
+  }
+}
+
+let jac = new Engereer("jac", 20)
+jac.sayMyName()
+jac.coding()
+
+let yy = new Person("yy", 20)
+yy.sayMyName()
+yy.coding()
+
+// console.log("hello world".length)
+
 // css 單位
