@@ -347,34 +347,61 @@ const students = [
 // console.log(students[0].last_name + " " + students[0].first_name)
 
 // forEach
-function showAllName(student) {
-  console.log(student.last_name + " " + student.first_name)
-}
-for (let i = 0; i < students.length; i++) {
-  let student = students[i]
-  showAllName(student)
-  // console.log(students[i].last_name + " " + students[i].first_name)
-}
-students.forEach(function (student) {
-  console.log(student.last_name + " " + student.first_name)
-})
+// function showAllName(student) {
+//   console.log(student.last_name + " " + student.first_name)
+// }
+// for (let i = 0; i < students.length; i++) {
+//   let student = students[i]
+//   showAllName(student)
+//   // console.log(students[i].last_name + " " + students[i].first_name)
+// }
+// students.forEach(function (student) {
+//   console.log(student.last_name + " " + student.first_name)
+// })
 
-// filter
+// // filter
+// let result = []
+// for (let i = 0; i < students.length; i++) {
+//   let student = students[i]
+//   if (student.gender == "male") {
+//     result.push(student)
+//   }
+// }
+// console.log(result)
+
+// let result2 = students.filter(function (item) {
+//   return item.gender == "male"
+// })
+// console.log(result2)
+
+// map
+console.log(students)
 let result = []
 for (let i = 0; i < students.length; i++) {
   let student = students[i]
-  if (student.gender == "male") {
-    result.push(student)
-  }
+  result.push(student.email)
 }
 console.log(result)
 
-let result2 = students.filter(function (item) {
-  return item.gender == "male"
-})
+let result2 = students
+  .map(function (item) {
+    return {
+      // id: item.id,
+      // last_name: item.last_name,
+      // first_name: "志遠",
+      // gender: "male",
+      // phone: "0901-234-567",
+      // birthday: "1998-06-12",
+      // email: "zhiyuan.yang@email.com",
+      ...item,
+      age: new Date().getFullYear() - item.birthday.substring(0, 4),
+      full_name: item.last_name + " " + item.first_name,
+    }
+  })
+  .filter(function (item) {
+    return item.age <= 26
+  })
 console.log(result2)
-
-// map
 
 // reduce
 
