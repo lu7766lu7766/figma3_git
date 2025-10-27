@@ -383,31 +383,37 @@ for (let i = 0; i < students.length; i++) {
 }
 console.log(result)
 
-let result2 = students
-  .map(function (item) {
-    return {
-      // id: item.id,
-      // last_name: item.last_name,
-      // first_name: "志遠",
-      // gender: "male",
-      // phone: "0901-234-567",
-      // birthday: "1998-06-12",
-      // email: "zhiyuan.yang@email.com",
-      ...item,
-      age: new Date().getFullYear() - item.birthday.substring(0, 4),
-      full_name: item.last_name + " " + item.first_name,
-    }
-  })
-  .filter(function (item) {
-    return item.age <= 26
-  })
+let result2 = students.map(function (item) {
+  return {
+    // id: item.id,
+    // last_name: item.last_name,
+    // first_name: "志遠",
+    // gender: "male",
+    // phone: "0901-234-567",
+    // birthday: "1998-06-12",
+    // email: "zhiyuan.yang@email.com",
+    ...item,
+    age: new Date().getFullYear() - item.birthday.substring(0, 4),
+    full_name: item.last_name + " " + item.first_name,
+  }
+})
+// .filter(function (item) {
+//   return item.age <= 26
+// })
 console.log(result2)
 
 // reduce
+// console.log(
+//   [1, 2, 3, 4, 5, 6, 7, 8, 9, 10].reduce(function (res, item) {
+//     return res + item
+//   }, 0)
+// ) // 0+1+2+3.....+10 = 55
+
+// 所有學生年齡相加總和
 console.log(
-  [1, 2, 3, 4, 5, 6, 7, 8, 9, 10].reduce(function (res, item) {
-    return res + item
+  result2.reduce(function (res, student) {
+    return res + student.age
   }, 0)
-) // 0+1+2+3.....+10 = 55
+)
 
 // css 單位
