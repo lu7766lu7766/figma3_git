@@ -5,7 +5,6 @@ false
 ;("hello world")
 null
 undefined
-
 // let a = 10
 // let b = 20
 // let c = a
@@ -204,10 +203,25 @@ undefined
 // yy.coding() // error
 
 let str = "hello world xxgjhgjhjhx"
-console.log(str.length)
-console.log(str.substring(0, 5))
-console.log(str.toUpperCase())
+// console.log(str.length)
+// console.log(str.substring(0, 5))
+// console.log(str.toUpperCase())
 console.log(str.split("o"))
-// str 首字大寫
-console.log(str.substring(0, 1).toUpperCase() + str.substring(1, str.length))
+// // str 首字大寫
+// console.log(str.substring(0, 1).toUpperCase() + str.substring(1, str.length))
+
+// array 陣列
+let arr = [1, 3, 5]
+// object 物件
+let jac = {
+  name: "jac",
+  age: 20,
+  sayMyName() {
+    console.log(`my name is ${this.name}`)
+  },
+}
+console.log(arr)
+console.log(jac.name)
+jac.sayMyName()
+
 // css 單位
