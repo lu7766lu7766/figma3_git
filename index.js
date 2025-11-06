@@ -416,4 +416,29 @@ console.log(
   }, 0)
 )
 
+// timer
+window.onload = function () {
+  document.addEventListener("click", function (e) {
+    const clickX = e.clientX
+    const clickY = e.clientY
+    const $ball = document.querySelector("#ball")
+    const stepX = clickX - $ball.offsetLeft
+    const stepY = clickY - $ball.offsetTop
+    const timer = setInterval(function () {
+      $ball.style.left = $ball.offsetLeft + stepX + "px"
+      $ball.style.top = $ball.offsetTop + stepY + "px"
+      if (Math.abs($ball.offsetLeft - clickX) < 10 || Math.abs($ball.offsetTop - clickY) < 10) {
+        clearInterval(timer)
+      }
+    }, 30)
+  })
+}
+setInterval(function () {
+  console.log("interval")
+}, 30)
+
+setTimeout(function () {
+  console.log("timeout")
+}, 5000)
+
 // css 單位
