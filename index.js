@@ -445,4 +445,12 @@ setTimeout(function () {
   console.log("timeout")
 }, 5000)
 
+fetch("https://tcgbusfs.blob.core.windows.net/dotapp/youbike/v2/youbike_immediate.json")
+  .then(function (res) {
+    return res.json()
+  })
+  .then(function (data) {
+    console.log(data)
+  })
+
 // css 單位
