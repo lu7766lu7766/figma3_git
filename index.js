@@ -418,24 +418,28 @@ console.log(
 
 // timer
 window.onload = function () {
+  const $ball = document.querySelector("#ball")
+
   document.addEventListener("click", function (e) {
     const clickX = e.clientX
     const clickY = e.clientY
-    const $ball = document.querySelector("#ball")
-    const stepX = clickX - $ball.offsetLeft
-    const stepY = clickY - $ball.offsetTop
+
+    const stepX = (clickX - $ball.offsetLeft) / 30
+    const stepY = (clickY - $ball.offsetTop) / 30
+
     const timer = setInterval(function () {
-      $ball.style.left = $ball.offsetLeft + stepX + "px"
-      $ball.style.top = $ball.offsetTop + stepY + "px"
+      $ball.style.left = +$ball.style.left.replace("px", "") + stepX + "px"
+      $ball.style.top = +$ball.style.top.replace("px", "") + stepY + "px"
+      console.log($ball.style.left, $ball.style.top)
       if (Math.abs($ball.offsetLeft - clickX) < 10 || Math.abs($ball.offsetTop - clickY) < 10) {
         clearInterval(timer)
       }
     }, 30)
   })
 }
-setInterval(function () {
-  console.log("interval")
-}, 30)
+// setInterval(function () {
+//   console.log("interval")
+// }, 30)
 
 setTimeout(function () {
   console.log("timeout")

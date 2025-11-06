@@ -57,8 +57,8 @@ a:hover {
   border-radius: 50%;
   background-color: red;
   z-index: 10;
-  transition: all 1s;
-  animation-name: move;
+  /* transition: all 1s;
+  animation-name: move; */
 }
 .circle.active {
   left: 50%;
