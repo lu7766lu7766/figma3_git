@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>滾輪控制影片</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        width: 100%;
+        overflow-x: hidden;
+        overflow-y: auto;
+        font-family: "Arial", sans-serif;
+      }
+
+      /* Video 區域樣式 */
+      #video-section {
+        position: relative;
+        width: 100%;
+        height: 100vh;
+        background: #000;
+      }
+
+      #video-section.sticky {
+        position: sticky;
+        top: 0;
+        z-index: 1;
+      }
+
+      #video-container {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      /* Footer 樣式 */
+      footer {
+        min-height: 100vh;
+        background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        padding: 40px;
+        position: relative;
+        z-index: 2;
+      }
+
+      footer h2 {
+        font-size: 3rem;
+        margin-bottom: 30px;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <section id="video-section" class="sticky">
+      <div id="video-container">
+        <video id="video" preload="auto">
+          <source src="21.mp4" type="video/mp4" />
+          您的瀏覽器不支援影片播放
+        </video>
+      </div>
+    </section>
+
+    <footer>
+      <h2>體驗完成！</h2>
+      <p>感謝您體驗我們的互動影片系統</p>
+    </footer>
+
+    <script>
+      const video = document.getElementById("video")
+      const videoSection = document.getElementById("video-section")
+
+      // 滾動速度調整參數
+      const scrollSensitivity = 0.005
+
+      // 狀態追蹤
+      let isVideoFullscreen = false
+      let videoFinished = false
+      let lastScrollY = window.scrollY
+      let lockedScrollY = null // 鎖定的滾動位置
+
+      // 等待影片載入完成
+      video.addEventListener("loadedmetadata", () => {
+        console.log("影片載入完成，總長度:", video.duration)
+      })
+
+      // 檢查影片是否在滿版狀態
+      function checkVideoFullscreen() {
+        const rect = videoSection.getBoundingClientRect()
+        const isFullscreen = rect.top <= 0 && rect.bottom >= window.innerHeight
+        return isFullscreen
+      }
+
+      // 檢查是否可以繼續向下滾動
+      function canScrollDown() {
+        // 如果影片還沒播放完，不允許向下滾動
+        if (isVideoFullscreen && !videoFinished) {
+          return false
+        }
+        return true
+      }
+
+      // 檢查是否可以向上滾動
+      function canScrollUp() {
+        // 向上滾動總是允許的
+        return true
+      }
+
+      // 滾輪事件處理
+      window.addEventListener(
+        "wheel",
+        (e) => {
+          isVideoFullscreen = checkVideoFullscreen()
+
+          // 確認影片是否播放完成
+          if (video.currentTime >= video.duration - 0.1) {
+            videoFinished = true
+          }
+
+          // 如果影片滿版
+          if (isVideoFullscreen) {
+            // 確保影片已載入
+            if (video.readyState < 2) {
+              return
+            }
+
+            const isScrollingDown = e.deltaY > 0
+            const isScrollingUp = e.deltaY < 0
+
+            // 向下滾動且影片未播放完成
+            if (isScrollingDown && !videoFinished) {
+              e.preventDefault()
+
+              // 控制影片播放
+              const delta = e.deltaY * scrollSensitivity
+              let newTime = video.currentTime + delta
+              newTime = Math.max(0, Math.min(newTime, video.duration))
+              video.currentTime = newTime
+            } else if (isScrollingUp && video.currentTime > 0.1) {
+              // 向上滾動，且影片不在開頭位置
+              e.preventDefault()
+
+              // 如果影片已經播放完成，向上滾動會倒退影片並重置完成狀態
+              if (videoFinished) {
+                videoFinished = false
+                lockedScrollY = window.scrollY // 重新鎖定當前位置
+              }
+
+              // 控制影片倒退
+              const delta = e.deltaY * scrollSensitivity
+              let newTime = video.currentTime + delta
+              newTime = Math.max(0, Math.min(newTime, video.duration))
+              video.currentTime = newTime
+            }
+            // 如果向下滾動且影片已播放完成，允許正常滾動（不preventDefault）
+            // 如果向上滾動且影片在開頭（currentTime <= 0.1），允許正常滾動
+          }
+        },
+        { passive: false }
+      )
+
+      // 監聽滾動事件以更新狀態
+      window.addEventListener("scroll", () => {
+        const wasFullscreen = isVideoFullscreen
+        isVideoFullscreen = checkVideoFullscreen()
+
+        // 當影片剛進入滿版狀態時，記錄鎖定位置
+        if (!wasFullscreen && isVideoFullscreen && !videoFinished) {
+          lockedScrollY = window.scrollY
+        }
+
+        // 如果影片滿版但未播完，鎖定在當前位置，不允許繼續向下滾動
+        if (isVideoFullscreen && !videoFinished && lockedScrollY !== null) {
+          if (window.scrollY > lockedScrollY) {
+            window.scrollTo(0, lockedScrollY)
+            return
+          }
+        }
+
+        // 如果影片播完，解除鎖定
+        if (videoFinished) {
+          lockedScrollY = null
+        }
+
+        lastScrollY = window.scrollY
+      })
+    </script>
+  </body>
+</html>

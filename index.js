@@ -452,5 +452,3 @@ fetch("https://tcgbusfs.blob.core.windows.net/dotapp/youbike/v2/youbike_immediat
   .then(function (data) {
     console.log(data)
   })
-
-// css 單位
