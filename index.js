@@ -417,26 +417,26 @@ console.log(
 )
 
 // timer
-window.onload = function () {
-  const $ball = document.querySelector("#ball")
+// window.onload = function () {
+//   const $ball = document.querySelector("#ball")
 
-  document.addEventListener("click", function (e) {
-    const clickX = e.clientX
-    const clickY = e.clientY
+//   document.addEventListener("click", function (e) {
+//     const clickX = e.clientX
+//     const clickY = e.clientY
 
-    const stepX = (clickX - $ball.offsetLeft) / 30
-    const stepY = (clickY - $ball.offsetTop) / 30
+//     const stepX = (clickX - $ball.offsetLeft) / 30
+//     const stepY = (clickY - $ball.offsetTop) / 30
 
-    const timer = setInterval(function () {
-      $ball.style.left = +$ball.style.left.replace("px", "") + stepX + "px"
-      $ball.style.top = +$ball.style.top.replace("px", "") + stepY + "px"
-      console.log($ball.style.left, $ball.style.top)
-      if (Math.abs($ball.offsetLeft - clickX) < 10 || Math.abs($ball.offsetTop - clickY) < 10) {
-        clearInterval(timer)
-      }
-    }, 30)
-  })
-}
+//     const timer = setInterval(function () {
+//       $ball.style.left = +$ball.style.left.replace("px", "") + stepX + "px"
+//       $ball.style.top = +$ball.style.top.replace("px", "") + stepY + "px"
+//       console.log($ball.style.left, $ball.style.top)
+//       if (Math.abs($ball.offsetLeft - clickX) < 10 || Math.abs($ball.offsetTop - clickY) < 10) {
+//         clearInterval(timer)
+//       }
+//     }, 30)
+//   })
+// }
 // setInterval(function () {
 //   console.log("interval")
 // }, 30)
@@ -452,3 +452,29 @@ fetch("https://tcgbusfs.blob.core.windows.net/dotapp/youbike/v2/youbike_immediat
   .then(function (data) {
     console.log(data)
   })
+
+window.onload = function () {
+  let mul1Value = document.querySelector("#mul1").value
+  let mul2Value = document.querySelector("#mul2").value
+  document.querySelector("#mul1").addEventListener("input", function () {
+    mul1Value = document.querySelector("#mul1").value
+    draw()
+  })
+  document.querySelector("#mul2").addEventListener("input", function () {
+    mul2Value = document.querySelector("#mul2").value
+    draw()
+  })
+  function draw() {
+    let html = "<table border='1'>"
+    for (let i = 1; i <= mul1Value; i++) {
+      html += `<tr>`
+      for (let j = 1; j <= mul2Value; j++) {
+        html += `<td>${i} * ${j} = ${i * j}</td>`
+      }
+      html += `</tr>`
+    }
+    html += "</table>"
+    document.querySelector("#canvas").innerHTML = html
+  }
+  draw()
+}
